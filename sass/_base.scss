@@ -18,6 +18,12 @@
     --line: 1px solid var(--color-grey-light-2);
 }
 
+$break-point-largest: 75em; //1200px
+$break-point-large: 68.75em; //1100px
+$break-point-medium: 56.25em; // 900px
+$break-point-small: 37.5em; // 600px
+$break-point-smaller: 28.125em; // 450px
+
 * {
     margin: 0;
     padding: 0;
@@ -32,6 +38,18 @@
 html {
     box-sizing: border-box;
     font-size: 62.5%;
+
+    @media only screen and (max-width: $break-point-large) {
+        font-size: 50%; // 8px
+    }
+
+    @media only screen and (max-width: $break-point-medium) {
+        font-size: 43.75%; // 7px
+    }
+
+    @media only screen and (max-width: $break-point-small) {
+        font-size: 37.5%; // 6px
+    }
 }
 
 body {

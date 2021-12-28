@@ -2,6 +2,9 @@
 .logo {
     height: 3.25rem;
     margin: 0px 0px 0px 2rem;
+    @media only screen and (max-width: $break-point-small) {
+        order: 1;
+    }
 }
 
 // Search
@@ -11,6 +14,13 @@
     align-items: center;
     justify-content: center;
     flex: 0 0 40%;
+
+    @media only screen and (max-width: $break-point-small) {
+        order: 3;
+        // margin: 0 auto;
+        // width: 100%;
+        flex: 0 0 100%;
+    }
 
     &__input {
         font-family: inherit;
@@ -67,6 +77,10 @@
     align-items: center;
     justify-content: space-between;
     align-self: stretch;
+
+    @media only screen and (max-width: $break-point-small) {
+        order: 2;
+    }
 
     & > * {
         padding: 0 2rem;
@@ -125,10 +139,23 @@
     font-size: 1.4rem;
     margin-top: 3.5rem;
 
+    @media only screen and (max-width: $break-point-medium) {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin: 0;
+    }
+
     &__item {
         position: relative;
+        @media only screen and (max-width: $break-point-medium) {
+            flex: 1;
+        }
         &:not(:last-child) {
             margin-bottom: 0.5rem;
+            @media only screen and (max-width: $break-point-medium) {
+                margin-bottom: 0;
+            }
         }
     }
 
@@ -166,6 +193,15 @@
         display: flex;
         align-items: center;
         padding: 1.5rem 3rem;
+        @media only screen and (max-width: $break-point-medium) {
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        @media only screen and (max-width: $break-point-smaller) {
+            flex-direction: column;
+            padding: 1rem;
+        }
     }
 
     &__icon {
@@ -176,6 +212,9 @@
 
     &__text {
         margin-left: 2rem;
+        @media only screen and (max-width: $break-point-smaller) {
+            margin: 2px 0px 0px 0px;
+        }
     }
 }
 
@@ -185,6 +224,9 @@
     text-align: center;
     padding: 2.5rem;
     color: var(--color-grey-light-4);
+    @media only screen and (max-width: $break-point-medium) {
+        display: none;
+    }
 }
 
 // Gallery ================================================================
@@ -214,6 +256,11 @@
         text-transform: uppercase;
         padding: 1.5rem 3rem;
         letter-spacing: 1px;
+
+        @media only screen and (max-width: $break-point-smaller) {
+            padding: 1rem;
+            font-size: 1.5rem;
+        }
     }
 
     &__stars {
@@ -376,6 +423,11 @@
     z-index: 100;
     overflow: hidden;
 
+    @media only screen and (max-width: $break-point-medium) {
+        margin-bottom: 1rem;
+        padding: 1.5rem;
+    }
+
     &::before {
         content: "\201C";
         position: absolute;
@@ -391,12 +443,20 @@
     &__text {
         font-size: 1.4rem;
         margin-bottom: 2rem;
+        @media only screen and (max-width: $break-point-small) {
+            margin: 0 auto;
+            width: 50%;
+            text-align: center;
+        }
     }
 
     &__user {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        @media only screen and (max-width: $break-point-small) {
+            justify-content: center;
+        }
     }
 
     &__photo {
@@ -411,6 +471,9 @@
         flex-direction: column;
         justify-content: center;
         margin-right: auto;
+        @media only screen and (max-width: $break-point-small) {
+            margin-right: 5rem;
+        }
     }
 
     &__user-name {
