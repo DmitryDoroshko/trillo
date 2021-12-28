@@ -9,7 +9,9 @@
   --color-grey-dark-1: #333;
   --color-grey-dark-2: #777;
   --color-grey-dark-3: #999;
-  --shadow-dark-1: 0 2rem 6rem rgba(0, 0, 0, 0.3); }
+  --shadow-dark-1: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+  --shadow-light-1: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+  --line: 1px solid var(--color-grey-light-2); }
 
 * {
   margin: 0;
@@ -32,6 +34,10 @@ body {
   color: var(--color-grey-dark-2);
   min-height: 100vh;
   background-repeat: no-repeat; }
+
+::selection {
+  color: white;
+  background-color: var(--color-primary-light); }
 
 .logo {
   height: 3.25rem;
@@ -161,6 +167,135 @@ body {
   padding: 2.5rem;
   color: var(--color-grey-light-4); }
 
+.gallery {
+  display: flex; }
+  .gallery__photo {
+    display: block;
+    width: 100%; }
+
+.overview {
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: var(--line); }
+  .overview__heading {
+    font-size: 2.25rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    padding: 1.5rem 3rem;
+    letter-spacing: 1px; }
+  .overview__stars {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-right: auto; }
+  .overview__star-icon, .overview__location-icon {
+    height: 1.75rem;
+    width: 1.75rem;
+    fill: var(--color-primary); }
+  .overview__location-icon {
+    margin-right: 0.5rem; }
+  .overview__location {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 2rem 3rem;
+    font-size: 1.2rem; }
+  .overview__rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-primary);
+    align-self: stretch;
+    padding: 1rem 2.25rem;
+    color: #fff; }
+  .overview__rating-average {
+    font-size: 2.25rem;
+    font-weight: 300; }
+  .overview__rating-count {
+    margin-top: -3px;
+    text-transform: uppercase;
+    font-size: 0.8rem; }
+
+.btn-inline {
+  font-size: inherit;
+  border: none;
+  border-bottom: 1px solid currentColor;
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--color-primary);
+  padding-bottom: 2px;
+  transition: all 0.2s; }
+  .btn-inline:hover {
+    color: var(--color-grey-dark-1); }
+  .btn-inline:focus {
+    outline: none;
+    animation-name: pulsate;
+    animation-duration: 1s;
+    animation-iteration-count: infinite; }
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    box-shadow: none; }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25); }
+  100% {
+    transform: scale(1);
+    box-shadow: none; } }
+
+.paragraph:not(:last-of-type) {
+  margin-bottom: 2rem; }
+
+.paragraph {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; }
+  .paragraph__icon {
+    width: 1rem;
+    height: 1rem;
+    align-self: center;
+    fill: var(--color-primary);
+    margin-right: 0.3rem; }
+
+.list {
+  list-style: none;
+  padding: 3rem 0;
+  margin: 3rem 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-top: var(--line);
+  border-bottom: var(--line); }
+  .list__item {
+    flex: 0 0 50%;
+    margin-bottom: 0.7rem; }
+
+.recommend {
+  font-size: 1.3rem;
+  color: var(--color-grey-dark-3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .recommend__count {
+    flex: 1; }
+  .recommend__friends {
+    display: flex;
+    flex-direction: row; }
+  .recommend__photo {
+    box-sizing: content-box;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    border: 3px solid white; }
+    .recommend__photo:not(:last-child) {
+      margin-right: -1.5rem; }
+
 .container {
   max-width: 120rem;
   margin: 8rem auto;
@@ -173,7 +308,7 @@ body {
   display: flex;
   height: 7rem;
   background-color: #fff;
-  border-bottom: var(--color-grey-light-2);
+  border-bottom: var(--line);
   justify-content: space-between;
   align-items: center; }
 
@@ -188,6 +323,22 @@ body {
   justify-content: space-between; }
 
 .hotel-view {
-  background-color: orangered;
-  height: 80rem;
+  flex: 1; }
+
+.detail {
+  display: flex;
+  justify-content: center;
+  padding: 4.5rem;
+  background-color: var(--color-grey-light-1); }
+
+.description {
+  font-size: 1.4rem;
+  background-color: #fff;
+  margin-right: 4.5rem;
+  padding: 3rem;
+  flex: 0 0 60%;
+  box-shadow: var(--shadow-light-1); }
+
+.user-reviews {
+  background-color: #fff;
   flex: 1; }
